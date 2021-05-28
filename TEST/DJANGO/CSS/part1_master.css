@@ -1,0 +1,21 @@
+/* comment */
+
+/* selected tag{
+  propertry : value;
+} */
+
+h1{
+  color: Blue;
+}
+
+li{
+  color: rgb(196, 27, 53);
+}
+
+p{
+  color: #33a13e;
+}
+
+h4{
+  color: rgba(0, 0, 0, 0.2); /*0.2 is trasperant from 0-1*/
+}

@@ -1,0 +1,28 @@
+h1{
+  font-family: "Arial";
+}
+
+p{
+  font-family: monospace;
+}
+
+body{
+  font-size: 15px;
+}
+
+/* 1em = 16px
+2em = 32px */
+
+#two{
+  font-size: 2.0em;
+  font-family: 'Gloria Hallelujah', cursive;
+}
+
+p{
+  font-style: italic;
+  font-weight: bolder;
+}
+
+h1{
+  text-align: center;
+}

@@ -1,0 +1,37 @@
+/* *{
+  color: Black;
+} */
+
+div{
+  color: red;
+}
+
+/* Classes always stat with a DOT -"." */
+
+.firstDiv{
+  color: pink;
+}
+
+.secondDiv{
+  color: red;
+}
+
+/* ID's always start with a # */
+
+#singledout{
+  color: grey;
+  text-decoration: line-through;
+}
+
+h3 + ul{
+  border: 3px solid green;
+}
+
+li a{
+  color: red;
+}
+
+li a[href="www.google.com"]{
+  color:gold;
+  border:px soild red;
+}
