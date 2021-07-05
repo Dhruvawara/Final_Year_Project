@@ -12,13 +12,13 @@
 
 </head>
 
-<body>
-    <nav class="navbar navbar-light bg-light">
+<body style="background-color: #CDF0EA;">
+    <nav class="navbar navbar-light fixed-top" style="background-color: #C490E4;">
         <div class="container-fluid">
             <a class="navbar-brand" href="http://127.0.0.1:5000/">
                 <img class="rounded" src="{{ url_for('static',filename='logo.jpg') }}" alt="REVIEW ANALYZER" width="30"
                     height="24">
-                Navbar
+                REVIEW ANALYZER
             </a>
             <form class="d-flex" action="/process" method="POST">
                 <input class="form-control me-2" type="search" placeholder="Amazon product link" aria-label="text"
@@ -30,35 +30,34 @@
 
 
 
-    <div class="row text-center">
+    <div class="row text-center" style="background-color: #F6C6EA;margin: 1% 11%;padding: 2%;margin-top: 4%;">
         <div class="col">
-            <h2>Do you want to buy a product but you dont trust the seller?</h2>
-            <div style="padding: 0px 300px;">
-                <h5>Reviewaholic analyses all the reviews left behind by previous buyers and helps you make
-                        an educated decision. By using state of the art machine learning techniques,
-                        Reviewaholic can help you find the right reasons for buying the right products.</h5>
+            <h2 style="font-size: 4vw;">Do you want to buy a product but you dont trust the seller?</h2>
+            <div style="padding: 0px 25%;">
+                <p style="font-size: 1.5vw;justify-content: center;">This REVIEW ANALYZER, analyzes all the reviews left
+                    behind by previous buyers and helps you make an educated decision. By using machine learning
+                    technique Vader Sentimental analyzer, Reviewaholic can help you find the right reasons for buying
+                    the right products.</p>
             </div>
         </div>
     </div>
-    </div>
-    </div>
 
 
 
-    <div class="row text-center">
+    <div class="row text-center" style="margin-top: 35px;margin: 1% 11%;background-color: #F6C6EA;padding: 2%;">
         <div class="row">
-            <h2 class=" text-center">Tutorial</h2>
+            <h2 class=" text-center" style="font-size: 3vw;">Tutorial</h2>
         </div>
         <div class="col">
-            <p class="category">1) Select the desired product</p>
+            <p class="category" style="font-size: 1.5vw;">1) Select the desired product</p>
             <img alt="Rounded Image" height="200px" width="170px" class="rounded-circle" src="/static/1.png">
         </div>
         <div class="col">
-            <p class="category">2) Select and copy the url</p>
+            <p class="category" style="font-size: 1.5vw;">2) Select and copy the url</p>
             <img alt="Rounded Image" height="200px" width="170px" class="rounded-circle" src="/static/2.png">
         </div>
         <div class="col">
-            <p class="category">3) Enter the url and click 'Submit'</p>
+            <p class="category" style="font-size: 1.5vw;">3) Enter the url and click 'Submit'</p>
             <img alt="Rounded Image" height="200px" width="170px" class="rounded-circle" src="/static/3.png">
         </div>
     </div>

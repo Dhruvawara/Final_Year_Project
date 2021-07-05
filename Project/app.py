@@ -37,16 +37,20 @@ def process():
         product_asin = url[url.find('dp/')+3: url.find('dp/')+13]
         # https://www.amazon.in/dp/0143453645/ref=s9_acsd_obs_hd_bw_b1RCrtn_c2_x_16_t?pf_rd_m=A1K21FY43GMZF8&pf_rd_s=merchandised-search-11&pf_rd_r=WYQGZ516Q1DNGHBM7RP5&pf_rd_t=101&pf_rd_p=3119490d-c041-5aa7-960c-2ad787501dff&pf_rd_i=1318161031
 
-        review_scraper = amazon_product_review_scraper(
-            amazon_site="amazon.in", product_asin=product_asin)
-        reviews_df, p_title, p_image = review_scraper.scrape()
-
+        try:
+            review_scraper = amazon_product_review_scraper( amazon_site="amazon.in", product_asin=product_asin)
+        except:
+            return '<script>alert("Only works with amazon.in");window.history.back();</script>'
+        try:
+            reviews_df, p_title, p_image = review_scraper.scrape()
+        except:
+            return '<script>alert("Captcha Error ");window.history.back();</script>'      
         reviews_df['rating'] = reviews_df['rating'].str[:1].astype(int)
 
         with open('scraped_data.csv', 'w') as csv_file:
             reviews_df.to_csv('scraped_data.csv', index=False)
     else:
-        return '<script>alert("Only works with amazon.in");window.history.back();</script>'
+        return '<script>alert("Error in Input");window.history.back();</script>'
     print(p_title, p_image)
     df = pd.read_csv('scraped_data.csv')
     no_of_reviews = len(df)
@@ -143,7 +147,7 @@ def process():
     else:
         verdict = 'This product is recommended'
 
-    return render_template('process.html', p_image=p_image, p_title=p_title, len_r=no_of_reviews, row_data=list(highest_polarity.values.tolist()), row2_data=list(lowest_polarity.values.tolist()), titles=highest_polarity.columns.values, total_reviews=len(df), pos=str(df['Positive'].mean() * 10)[0:3], neg=str(df['Neutral'].mean() * 10)[0:3], neutral=str(df['Negative'].mean() * 10)[0:3], verdict=verdict)
+    return render_template('process.html', asin_id=product_asin, p_image=p_image, p_title=p_title, len_r=no_of_reviews, row_data=list(highest_polarity.values.tolist()), row2_data=list(lowest_polarity.values.tolist()), titles=highest_polarity.columns.values, total_reviews=len(df), pos=str(df['Positive'].mean() * 10)[0:3], neg=str(df['Neutral'].mean() * 10)[0:3], neutral=str(df['Negative'].mean() * 10)[0:3], verdict=verdict)
 
 
 if __name__ == '__main__':
