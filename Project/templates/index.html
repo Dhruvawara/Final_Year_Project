@@ -20,25 +20,35 @@
                     height="24">
                 REVIEW ANALYZER
             </a>
-            <form class="d-flex" action="/process" method="POST">
-                <input class="form-control me-2" type="search" placeholder="Amazon product link" aria-label="text"
-                    name="url">
-                <button class="btn btn-outline-success" type="submit">Search</button>
-            </form>
+            <a href="http://www.amazon.in/">
+                <button class="btn btn-info">
+                    Amazon.in
+                </button>
+            </a>
         </div>
     </nav>
 
+    <script>
+        var url = "";
+        url = document.getElementById("urlinput");
+        function checkform() {
+            if (url.value.includes('amazon.in/')) {
+                alert('There is a problem with Input');
+                console.log("ZZzzzzzz");
+                return true;
+            }
+            return false;
+        }
+    </script>
 
 
-    <div class="row text-center" style="background-color: #F6C6EA;margin: 1% 11%;padding: 2%;margin-top: 4%;">
+    <div class="row text-center" style="background-color: #F6C6EA;margin: 1% 11%;padding: 2%;margin-top: 15%;">
         <div class="col">
-            <h2 style="font-size: 4vw;">Do you want to buy a product but you dont trust the seller?</h2>
-            <div style="padding: 0px 25%;">
-                <p style="font-size: 1.5vw;justify-content: center;">This REVIEW ANALYZER, analyzes all the reviews left
-                    behind by previous buyers and helps you make an educated decision. By using machine learning
-                    technique Vader Sentimental analyzer, Reviewaholic can help you find the right reasons for buying
-                    the right products.</p>
-            </div>
+            <form class="d-flex" action="/process" method="POST" onSubmit="return checkform()">
+                <input class="form-control me-2" type="search" placeholder="Amazon product link" aria-label="text"
+                    name="url" id="urlinput" required>
+                <input class="btn btn-outline-success" type="submit" value="Search"></input>
+            </form>
         </div>
     </div>
 
@@ -50,15 +60,15 @@
         </div>
         <div class="col">
             <p class="category" style="font-size: 1.5vw;">1) Select the desired product</p>
-            <img alt="Rounded Image" height="200px" width="170px" class="rounded-circle" src="/static/1.png">
+            <img alt="Rounded Image" height="90%" width="90%" class="rounded-circle" src="/static/1.png">
         </div>
         <div class="col">
             <p class="category" style="font-size: 1.5vw;">2) Select and copy the url</p>
-            <img alt="Rounded Image" height="200px" width="170px" class="rounded-circle" src="/static/2.png">
+            <img alt="Rounded Image" height="90%" width="90%" class="rounded-circle" src="/static/2.png">
         </div>
         <div class="col">
             <p class="category" style="font-size: 1.5vw;">3) Enter the url and click 'Submit'</p>
-            <img alt="Rounded Image" height="200px" width="170px" class="rounded-circle" src="/static/3.png">
+            <img alt="Rounded Image" height="90%" width="90%" class="rounded-circle" src="/static/3.png">
         </div>
     </div>
 
